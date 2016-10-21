@@ -12,14 +12,20 @@ As the course project to Getting and Cleaning Data on Coursera, this project wil
 5.Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
 Requirements
+
+
 Libraries ◦dplyr
 
 
 Usage
+
+
 source("run_analysis.R") # Check "MarianoTidyData.txt" in working directory
 
 
 Files & Folders
   CodeBook.md - the code book
+  
   README.md - this file
+  
   run_analysis.R - Primary script to process data
