@@ -44,20 +44,20 @@ test <- cbind(subject_test, y_test, X_test)
 combined <- rbind(train, test) 
 
 
-# determine which columns contain "mean()" or "std()" 
+# determine which columns contain "mean()" or "std()" // determinar que columnas contienen mediana o desstd
 meanstdcols <- grepl("mean\\(\\)", names(combined)) | grepl("std\\(\\)", names(combined))
 
 
-# ensure that we also keep the subjectID and activity columns 
+# ensure the subjectID and activity columns // conservar columna de voluntario y actividad
 meanstdcols[1:2] <- TRUE 
 
-# remove unnecessary columns 
+# remove unnecessary columns // borrar lo que no se requiere
 combined <- combined[, meanstdcols] 
 
-# convert the activity column from integer to factor 
+# convert the activity column from integer to factor // factorizar la columna de actividad
 combined$activity <- factor(combined$activity, labels=c("Walking", "Walking Upstairs", "Walking Downstairs", "Sitting", "Standing", "Laying"))
 
-## Create the file with our combined data
+## Create the file with our combined data // crear archivo con la información que se integró
 write.table(combined, "MarianoTidyData.txt", row.name=FALSE)
 
 
